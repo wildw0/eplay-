@@ -13,7 +13,7 @@ const Product = () => {
   const { data: game } = useGetGameQuery(id!)
 
   if (!game) {
-    return <div>Carregando...</div>
+    return <h3>Carregando...</h3>
   }
 
   return (
@@ -24,17 +24,19 @@ const Product = () => {
       </Section>
       <Section title="Mais detalhes" background="gray">
         <p>
-          <b>Plataforma: </b> {game.details.system} <br />
-          <b> Desenvolvedor:</b> {game.details.developer} <br />
-          <b> Editora: </b>
-          {game.details.publisher} <br />
-          <b> Idiomas:</b> O jogo oferece suporte a diversos idiomas, incluindo{' '}
+          <b>Plataforma:</b> {game.details.system}
+          <br />
+          <b>Desenvolvedor:</b> {game.details.developer}
+          <br />
+          <b>Editora:</b> {game.details.publisher}
+          <br />
+          <b>Idiomas:</b> O jogo oferece suporte a diversos idiomas, incluindo{' '}
           {game.details.languages.join(', ')}
         </p>
       </Section>
       <Gallery
         name={game.name}
-        defautCover={game.media.cover}
+        defaultCover={game.media.cover}
         items={game.media.gallery}
       />
     </>
@@ -42,7 +44,6 @@ const Product = () => {
 }
 
 export default Product
-
 // Antes da API
 
 // const Product = () => {
