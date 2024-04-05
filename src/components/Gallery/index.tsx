@@ -28,7 +28,7 @@ const mock: GalleryItem[] = [
 ]
 
 type Props = {
-  defautCover: string
+  defaultCover: string
   name: string
   items: GalleryItem[]
 }
@@ -37,7 +37,7 @@ interface ModalState extends GalleryItem {
   isVisible: boolean
 }
 
-const Gallery = ({ defautCover, name, items }: Props) => {
+const Gallery = ({ defaultCover, name, items }: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
     type: 'image',
@@ -48,7 +48,7 @@ const Gallery = ({ defautCover, name, items }: Props) => {
 
   const getMediaCover = (item: GalleryItem) => {
     if (item.type === 'image') return item.url
-    return defautCover
+    return defaultCover
   }
 
   const getMediaIcon = (item: GalleryItem) => {
